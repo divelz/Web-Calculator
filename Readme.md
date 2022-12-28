@@ -17,6 +17,7 @@ Three delete buttons:
 3. (C) : Eliminates all the written operation.
 
 **Image 1**
+
 ![Image1](./Image1.png)
 
 
