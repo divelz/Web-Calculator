@@ -16,7 +16,8 @@ Three delete buttons:
 2. (=>) : Delete one digit of the currently entered number from the right.
 3. (C) : Eliminates all the written operation.
 
-![Image1]()
+**Image 1**
+![Image1](./Image1.png)
 
 
 link: [Go to the website.](https://divelz.github.io/Web-Calculator/)
