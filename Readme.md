@@ -1,6 +1,6 @@
 # Web-Calculator
 
-#3 Project on the web, basic whole number calculator.
+#2 Project on the web, basic whole number calculator.
 
 * With addition, subtraction, multiplication, division.
 
