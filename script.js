@@ -31,14 +31,14 @@ let opObtener = [
     }
 ]
 
-// Funciones
+// Functions
 
 const __fSigno__ = (t, opc=0) => {
     return (opc === 0) ? ( t.replace('*', 'x').replace('/', '÷') 
         ) : t.replace('x', '*').replace('÷', '/')
 }
 
-const __getNum__ = (v, num_) => { // Global para reutilizar al hacer click o presionar
+const __getNum__ = (v, num_) => { // Global to reuse on click or press
     if (txt_opc2.length <= 11) {
         tabClear = true;
 
@@ -50,7 +50,7 @@ const __getNum__ = (v, num_) => { // Global para reutilizar al hacer click o pre
     }
 }
 
-const __getOperacion__ =  (v, _op_) => { // Igualmente que la anterior
+const __getOperacion__ =  (v, _op_) => { // Same as the previous
     let s = opc2.innerHTML; num1 = s;
     op = _op_; s += ' ' + op;
     opc1.innerHTML = s;
@@ -58,9 +58,9 @@ const __getOperacion__ =  (v, _op_) => { // Igualmente que la anterior
 
 const limpiar = () => { opc2.innerHTML = txt_opc2 = '0'; opc1.innerHTML = '...'; }
 
-const getNumClick = v => __getNum__(v, v.path[0].classList[1].replace('n', '')) // Agregar numeros al click
+const getNumClick = v => __getNum__(v, v.path[0].classList[1].replace('n', '')) // Add numbers to click
 
-const getNumPress = e => { // Al presionar un numero y un signo
+const getNumPress = e => { // By pressing a number and a sign
     tabClear = true;
 
     if (numsList.indexOf(e.key) != -1) { __getNum__(e, e.key)
@@ -74,11 +74,11 @@ const getNumPress = e => { // Al presionar un numero y un signo
     }
 } 
 
-const getOperacion = v => { // Al presionar un simbolo
+const getOperacion = v => { // By pressing a symbol
     __getOperacion__( v, __fSigno__( opObtener[0][ v.path[0].classList[1].replace('n', '') ] ) )
 }
 
-const getIgual = () => { // Al dar click en igual
+const getIgual = () => { // By clicking on the same
     num2 = opc2.innerHTML;
 
     if (tabClear) {
@@ -87,7 +87,7 @@ const getIgual = () => { // Al dar click en igual
     }
 }
 
-// Conectar funciones con eventos
+// Connect functions with events
 
 del2_1.addEventListener('click', () => {opc2.innerHTML = txt_opc2 = '0'} );
 
@@ -95,14 +95,14 @@ del2_2.addEventListener('click', () => {
     opc2.innerHTML = txt_opc2 = (opc2.innerHTML.length >= 2) ? opc2.innerHTML.slice(0,-1): '0'
 });
 
-del.addEventListener('click', limpiar); // Eliminar
+del.addEventListener('click', limpiar); // Eliminate
 
-nums.forEach( e => e.addEventListener('click', getNumClick) ); // Agregar numeros al click
+nums.forEach( e => e.addEventListener('click', getNumClick) ); // Add numbers to click
 
-document.addEventListener('keypress', getNumPress); // Al presionar un numero y un signo
+document.addEventListener('keypress', getNumPress); // By pressing a number and a sign
 
-opcs.forEach( e => e.addEventListener('click', getOperacion) ); // Al presionar un simbolo
+opcs.forEach( e => e.addEventListener('click', getOperacion) ); // By pressing a symbol
 
-igual.addEventListener('click', getIgual); // Al dar click en igual
+igual.addEventListener('click', getIgual); // By clicking on the same
 
-// De: Francisco Velez
+// Author: Francisco Velez
